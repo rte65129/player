@@ -1,11 +1,11 @@
 // Импортируем необходимые классы: плейлист, трек, аудиоплеер, стратегии воспроизведения и рендерер UI
-const { Playlist } = require ( './models/Playlist.js')
-const { Track } = require ( './models/Track.js')
-const { AudioPlayer } = require ( './core/AudioPlayer.js')
-const { SequentialStrategy } = require ( './strategies/SequentialStrategy.js')
-const { ShuffleStrategy } = require ( './strategies/ShuffleStrategy.js')
-const { RepeatOneStrategy } = require ( './strategies/RepeatOneStrategy.js')
-const { Renderer } = require ( './ui/Renderer.js')
+import { Playlist } from './models/Playlist.js';
+import { Track } from './models/Track.js';
+import { AudioPlayer } from './core/AudioPlayer.js';
+import { SequentialStrategy } from './strategies/SequentialStrategy.js';
+import { ShuffleStrategy } from './strategies/ShuffleStrategy.js';
+import { RepeatOneStrategy } from './strategies/RepeatOneStrategy.js';
+import { Renderer } from './ui/Renderer.js';
 
 // Ключ для хранения состояния плеера в localStorage
 const STORAGE_KEY = 'audio-player-oop:state'

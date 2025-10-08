@@ -7,15 +7,15 @@ export class Playlist {
     this.#currentIndex = 0;
   }
 
-  get tracks() { return [...this.#tracks]; }
-  get current() { return this.#tracks[this.#currentIndex] || null; }
-  get currentIndex() { return this.#currentIndex; }
-  get length() { return this.#tracks.length; }
-
+  get tracks() { return [...this.#tracks]; }  // Копия массива треков
+  get current() { return this.#tracks[this.#currentIndex] || null; }  // Текущий трек
+  get currentIndex() { return this.#currentIndex; } // Текущий индекс
+  get length() { return this.#tracks.length; }  // Количество треков
+  // Добавление 
   addTrack(track) {
     this.#tracks.push(track);
   }
-
+  // Удаление
   removeTrack(id) {
     this.#tracks = this.#tracks.filter(track => track.id !== id);
     if (this.#currentIndex >= this.#tracks.length) {
@@ -47,7 +47,7 @@ export class Playlist {
     this.#currentIndex = (this.#currentIndex - 1 + this.#tracks.length) % this.#tracks.length;
     return this.current;
   }
-
+  // Получение трека по индексу
   getTrack(index) {
     return this.#tracks[index] || null;
   }
